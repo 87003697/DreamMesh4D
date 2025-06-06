@@ -5,7 +5,7 @@ seed: 0
 
 data_type: "single-image-datamodule"
 data: # threestudio/data/image.py -> SingleImageDataModuleConfig
-  image_path: ???
+  image_path: "./data/input/monster/0.png"
   height: 512
   width: 512
   resolution_milestones: [200, 300]
@@ -59,7 +59,7 @@ system:
 
     n_gaussians_per_surface_triangle: 6
     learnable_positions: true
-    surface_mesh_to_bind_path: ???
+    surface_mesh_to_bind_path: "outputs/zero123-sai/[64, 128, 256]_0.png@20250603-164956/save/simplified/model_64_9365.ply"
 
     init_gs_opacity: 0.9
 
@@ -153,4 +153,4 @@ trainer:
 checkpoint:
   save_last: true # save at each validation time
   save_top_k: -1
-  every_n_train_steps: ${trainer.max_steps}
+  every_n_train_steps: ${trainer.max_steps} 

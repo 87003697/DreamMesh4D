@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print(
         f'Input mesh has {len(mesh_in.vertices)} vertices and {len(mesh_in.triangles)} triangles'
     )
-    o3d.visualization.draw_geometries([mesh_in])
+    # o3d.visualization.draw_geometries([mesh_in])  # Commented out for headless operation
 
     voxel_size = max(mesh_in.get_max_bound() - mesh_in.get_min_bound()) / args.scale
     print(f'voxel_size = {voxel_size:e}')
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     print(
         f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles'
     )
-    o3d.visualization.draw_geometries([mesh_smp])
+    # o3d.visualization.draw_geometries([mesh_smp])  # Commented out for headless operation
 
     filename = os.path.basename(args.mesh_path)
     filename = filename.split('.')[0]
